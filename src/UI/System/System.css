@@ -1,0 +1,16 @@
+.card {
+    max-width: 150;
+    margin: 20px;
+  }
+
+  .media {
+    height: 150px;
+    max-width: 150px;
+    padding-top: '10%';
+    margin-left:30px;
+  }
+  
+  .expand:open {
+    transform: 'rotate(180deg)';
+  }
+  
