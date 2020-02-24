@@ -10,7 +10,7 @@ const URL = {
     ManagementConsole: "uom/ManagementConsole?group=None",
     UserTask     :  "ui/UserTask?group=None",
     UserTaskTop5:   "ui/UserTask?limit=5",
-    UserName:            "web/Logon/quick/UserName?group=None"
+    UserName:       "web/Logon/quick/UserName?group=None"
 }
 
 export default URL;
