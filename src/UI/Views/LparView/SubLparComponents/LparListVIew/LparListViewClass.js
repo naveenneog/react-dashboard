@@ -6,6 +6,7 @@ import axios from '../../../../../AxiosHMC';
 import URL from '../../../../../URL';
 // import ViewSystemsLoader from '../../../../Root/ViewSystemsLoader';
 import LparViewLoader from './LparViewLoader';
+import StickyHeader from "./HybridLparView/StickyHeader";
 const styles = theme => ({
     root: {
         flexGrow: 1,
@@ -107,6 +108,7 @@ class LparListViewClass extends React.Component{
         
         return (
             <div>
+              <StickyHeader />
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justify="left" spacing={2}>

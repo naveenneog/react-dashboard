@@ -23,6 +23,10 @@ import InfoIcon from '@material-ui/icons/Info';
 import CardActions from '@material-ui/core/CardActions';
 import PieIcon from '@material-ui/icons/PieChartRounded';
 import Popover from '@material-ui/core/Popover';
+import { getThemeProps } from '@material-ui/styles';
+import Dialog from '@material-ui/core/Dialog';
+import ActivateDialogue from '../LparCard/Activate/ActivateDialogue';
+
 const useStyles = makeStyles(theme => ({
 
     card: {
@@ -67,6 +71,7 @@ export default function LparCard(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [shadow , setShadow] = React.useState(1);
     const [anchorPop, setAnchorPop] = React.useState(null);
+    const [openActivate , setOpenActivate] = React.useState(false);
 
   const handlePopOverClick = event => {
     setAnchorPop(event.currentTarget);
@@ -104,6 +109,10 @@ export default function LparCard(props) {
     variant="outlined"
    />
   }
+  const handlePopupClose = () =>{
+    setOpenActivate(false);
+    handleClose();
+  }
   const handleClickProc = () =>{
     console.log('Handle Proc Click')
     console.log(props.lpar.HasDedicatedProcessors ) ;
@@ -111,6 +120,9 @@ export default function LparCard(props) {
   }
   const handleClickMem = () =>{
     console.log('Handle mem Click')
+  }
+  const handleActivate = () => {
+    setOpenActivate(true);
   }
     return (
         <Card onMouseOver={onMouseOver}
@@ -136,7 +148,10 @@ export default function LparCard(props) {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Activate</MenuItem>
+                <MenuItem onClick={handleActivate}>Activate</MenuItem>
+                
+                  <ActivateDialogue lpar = {props.lpar} open = {openActivate} close = {handlePopupClose.bind()}/>
+                 
                 <MenuItem onClick={handleClose}>View Performance Data Collection</MenuItem>
                 <MenuItem onClick={handleClose}>Delete Partition</MenuItem>
               </Menu>
@@ -193,13 +208,13 @@ export default function LparCard(props) {
               
                 <Typography variant="body2" component="p">
                 System Name: <b>fsp-tiamat </b><br />
-                Reference Code: 00000000<br />
-                Partition ID: 22<br />
-                IP Address: -<br />
-                Environment: AIX/Linux<br />
-                OS Version: Unknown<br />
-                RMC Connection: Inactive<br />
-                Last Activated Profile: default<br />
+                Reference Code: {props.lpar.ReferenceCode}<br />
+                Partition ID: {props.lpar.PartitionID}<br />
+                IP Address: {props.lpar.ResourceMonitoringIPAddress}<br />
+                Environment: {props.lpar.PartitionType}<br />
+                OS Version: {props.lpar.OperatingSystemVersion}<br />
+                RMC Connection: {props.lpar.RMCState}<br />
+                Last Activated Profile: {props.lpar.LastActivatedProfile}<br />
                 Group tags:<br />
 
                 </Typography>

@@ -3,6 +3,7 @@ import React from 'react';
 import { makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import LparSkeleton from '../LparCard/LparSkeleton';
+import { Grid } from '@material-ui/core';
 
 
 
@@ -28,13 +29,31 @@ export default function SystemsLoader() {
       <CssBaseline />
      
           <main className={classes.paper}>
+            <Grid container spacing={3}>
               <LparSkeleton />
               <LparSkeleton />
               <LparSkeleton />
               <LparSkeleton />
               <LparSkeleton />
               <LparSkeleton />
-             
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              <LparSkeleton />
+              </Grid>
           </main>
     </div>
   );

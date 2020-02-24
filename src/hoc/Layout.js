@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
 import {Link} from 'react-router-dom';
@@ -23,6 +23,12 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Fab from '@material-ui/core/Fab';
+import UpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { SnackbarProvider, useSnackbar } from 'notistack';
+import axios from '../AxiosHMC';
+import URL from '../URL';
+
 
 const drawerWidth = 240;
 
@@ -99,6 +105,7 @@ grow: {
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
+    
   },
   drawerOpen: {
     width: drawerWidth,
@@ -135,6 +142,7 @@ grow: {
   },
   paperBar: {
     marginLeft : 72,
+    backgroundColor: '#fafafa',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -160,6 +168,15 @@ grow: {
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    
+  },
+  spacing: {
+    backgroundColor:'#fafafa',
+  },
+  snackButton:{
+      position: 'fixed',
+      bottom: 10,
+      right: 10
   },
 
 }));
@@ -170,14 +187,50 @@ export default function PrimarySearchAppBar(props) {
   const [open, setOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [tasks, setTasks] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  
+  const { enqueueSnackbar } = useSnackbar();
+
+
+
+  useEffect(() => {
+    if(!tasks){
+      axios.get(URL.UserTaskTop5)
+      .then( response => {
+        setTasks(response.data);
+      })
+    }
+   
+    
+  })
   const handleDrawerOpen = () => {
       console.log("Drawer Open");
     setOpen(!open);
   };
+  
+  const handleFloatingButtonClick = () =>{
+    console.log(tasks);
+    if(tasks){
+    tasks.forEach(element => {
+      let message = element.localizedLabel;
+      let variantVar = 'default';
+      if(element.status === 'Running'){
+        variantVar = 'info';
+      }else if(element.status === 'Completed'){
+        variantVar = 'success';
+      }else if(element.status === 'Failed'){
+        variantVar = 'error';
+      }
+      
+      enqueueSnackbar(message, { variant: variantVar ,anchorOrigin : {vertical: 'bottom', horizontal: 'right',} });
+    });
+    }
+  
 
+  }
   const handleDrawerClose = () => {
     console.log("Drawer Close");
     setOpen(!open);
@@ -360,12 +413,18 @@ export default function PrimarySearchAppBar(props) {
                   [classes.paperBarShift]: open,
               })}>
                   <div className={classes.toolbar} />
+                 
+                    
                   <div className={classes.spacing}>
                       {props.children}
                   </div>
+                  
+                 
               </div>
       </main>
-     
+      <Fab color="secondary"  onClick ={handleFloatingButtonClick} aria-label="add" className={classes.snackButton}>
+          <UpIcon />
+        </Fab>
     </div>
   );
 }

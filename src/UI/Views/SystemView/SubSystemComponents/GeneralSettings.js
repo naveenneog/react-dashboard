@@ -18,6 +18,7 @@ function createData(name, data) {
   return { name, data };
 }
 
+
 const rows = [
   createData('System Name', 'Firebird 1'),
   createData('IP Address', '9.3.232.116'),

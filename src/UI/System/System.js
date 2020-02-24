@@ -159,11 +159,12 @@ export default function SystemViewCard(props) {
         <Skeleton variant="rect" className={classes.media} />
       ): (
       <ButtonBase className={classes.cardButton}>
-      <Link to ={'/system/' + props.system.id} key={props.system.id}>
+      <Link to ={'/system/' + props.system.SystemName} key={props.system.SystemName}>
         <img className={classes.media} src = {systemIcon} />
         </Link>
       </ButtonBase>
       ) }
+      
      
           <CardContent>
           { props.loading ? (
