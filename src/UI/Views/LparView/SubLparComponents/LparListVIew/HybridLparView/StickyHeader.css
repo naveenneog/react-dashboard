@@ -30,10 +30,10 @@
   div.sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 60px;
     background-color: rgb(250, 250, 250);
     padding: 10px;
-    padding-top:70px;
+    /* padding-top:70px; */
     font-size: 20px;
   }
 
