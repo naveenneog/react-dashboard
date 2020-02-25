@@ -103,5 +103,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "homepage" : "https://9.3.147.222:12443/react-dashboard/"
 }

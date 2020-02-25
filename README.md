@@ -42,4 +42,12 @@ issue resetccfw
 go to 
 https://<hmc-ip>/react-dashboard
 
+In package.json
+include 
+"homepage" : "https://9.3.147.222:12443/react-dashboard/"
+
+for building the app to react-dashboard as home 
+
+then npm run build will build the file to respective home folder
+
 Enjoy the new HMC dashboard
