@@ -30,7 +30,7 @@ export default function QuickCreateDialogue() {
         Create Partition
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Create Partition(s)</DialogTitle>
+        <DialogTitle id="form-dialog-title">Create Partition Legacy</DialogTitle>
         <DialogContent>
           <DialogContentText>
           You can use the switch to create one or more partitions with minimum or configured resources. 

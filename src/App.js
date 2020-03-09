@@ -151,7 +151,7 @@ class App extends Component {
        <Switch >
             <Route path = "/" exact render = {() => dashboard} />
             <Route path = "/partitions" exact component = {LparView} />
-            <Route path = "/system/:id" exact component = {SystemView} />
+            <Route path = "/system/:id" exact component = {(props) => <SystemView {...props} systems={this.system} />} />
             <Route path = "/partitionsTabular" exact component = {LparListTabularView} />
             <Route path = "/hybridLparView" exact component = {HybridLparListView} />
           </Switch>

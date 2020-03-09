@@ -53,7 +53,7 @@ class PCMView extends Component {
 		<div>
        <Paper style = {{ padding: '10px',
     margin: 10,
-    maxWidth: 700,}} >
+    maxWidth: 500,}} >
 			<h3>Performance Demo with 50,000 Datapoints</h3>
 			<CanvasJSChart options = {options} 
 				 onRef={ref => this.chart = ref}

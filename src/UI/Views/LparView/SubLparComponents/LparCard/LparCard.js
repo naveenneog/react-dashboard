@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from '@material-ui/core/CardHeader';
-import ibmiICon from '../LparCard/virtualmachine_IBMi_64.png';
+import ibmiICon from '../LparCard/Activate/IBMi_image_copy.png';
 import aixIcon from '../LparCard/virtualmachine_LINUX_AIX_64.png';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Menu from '@material-ui/core/Menu';

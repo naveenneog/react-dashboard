@@ -38,11 +38,14 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
+    "query-string": "^6.11.0",
     "raf": "3.4.0",
     "react": "^16.12.0",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.12.0",
+    "react-iframe": "^1.8.0",
     "react-new-window": "^0.1.2",
+    "react-popout": "^1.0.2",
     "react-resizable": "^1.10.1",
     "react-router-dom": "^5.1.2",
     "react-syntax-highlighter": "^12.2.1",
@@ -104,5 +107,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage" : "https://9.3.147.222:12443/react-dashboard/"
+  "homepage": "https://9.3.147.222:12443/react-dashboard/"
 }
