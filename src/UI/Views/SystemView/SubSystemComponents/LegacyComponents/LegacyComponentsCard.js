@@ -49,12 +49,12 @@ export default function LegacyComponentsCard() {
                                 </Typography>
                                 <Typography variant="body2" gutterBottom>
                                     <LegacyLink name="Quick Create Legacy"
-                                        url="https://9.3.147.222:443/ui/#/ManagedSystem/3725acd7-2824-3e51-a759-20a68035078b%7c8408-E8E*10A73EV/createQuickPartition"
+                                        url="https://9.3.147.222:443/ui/#/ManagedSystem/caae9209-25e5-35cd-a71a-ed55c03f294d%7c8203-E4A*ACE0001/createQuickPartition"
                                     />
                                 </Typography>
                                 <Typography variant="body2" gutterBottom>
                                 <LegacyLink name="Add Vios"
-                                        url="https://9.3.147.222:443/ui/#/ManagedSystem/3725acd7-2824-3e51-a759-20a68035078b%7c8408-E8E*10A73EV/AddVios"
+                                        url="https://9.3.147.222:443/ui/#/ManagedSystem/caae9209-25e5-35cd-a71a-ed55c03f294d%7c8203-E4A*ACE0001/AddVios"
                                     />
                                 </Typography>
                                 <Typography>
