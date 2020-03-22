@@ -1,30 +1,30 @@
 Welcome to React Dashboard Proof of Concept
 
--Prerequisites to run this project 
--VSCode download your version from https://code.visualstudio.com/
--npm latest from https://www.npmjs.com/get-npm
--clone this project or download to a directory 
--unzip it 
--npm install 
--npm start 
--This will start the project in the Development mode 
--Open http://localhost:12443 in Safari
--Enable Developer options in safari
--Check Disable Cross Origin Restrictions in the Develop options
--Monitor the network using Inspect element to find which HMC call it is going 
--Click on the All > Go to headers > Pick the HMC IP and login to the HMC in the next tab
--Now reload the React App by pressing F5 
--It should render the systems page navigate around to see other pages 
--To Edit 
--open the project using VSCode
--The Project root start from App.js
--Modify the HMC IP in the AxiosHMC.js to point to your HMC and follow the same logon procedure for 
-
-
-STEPS to build and push to HMC
-Example
-https://9.3.147.238/react-dashboard
-https://9.3.147.222/react-dashboard
+-Prerequisites to run this project  
+-VSCode download your version from https://code.visualstudio.com/  
+-npm latest from https://www.npmjs.com/get-npm  
+-clone this project or download to a directory   
+-unzip it   
+-npm install   
+-npm start   
+-This will start the project in the Development mode   
+-Open http://localhost:12443 in Safari  
+-Enable Developer options in safari  
+-Check Disable Cross Origin Restrictions in the Develop options  
+-Monitor the network using Inspect element to find which HMC call it is going   
+-Click on the All > Go to headers > Pick the HMC IP and login to the HMC in the next tab  
+-Now reload the React App by pressing F5   
+-It should render the systems page navigate around to see other pages   
+-To Edit   
+-open the project using VSCode  
+-The Project root start from App.js  
+-Modify the HMC IP in the AxiosHMC.js to point to your HMC and follow the same logon procedure for   
+  
+  
+STEPS to build and push to HMC  
+Example  
+https://9.3.147.238/react-dashboard  
+https://9.3.147.222/react-dashboard  
 
 steps:
 
