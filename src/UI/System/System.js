@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red ,lightGreen } from '@material-ui/core/colors';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+// import systemIcon from '/images/system.png';
 import systemIcon from '../../../src/resources/images/system.png';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Menu from '@material-ui/core/Menu';
@@ -161,6 +162,7 @@ export default function SystemViewCard(props) {
       <ButtonBase className={classes.cardButton}>
       <Link to ={'/system/' + props.system.SystemName} key={props.system.SystemName}>
         <img className={classes.media} src = {systemIcon} />
+        {/* <img className={classes.media} src = "/images/system/png" /> */}
         </Link>
       </ButtonBase>
       ) }
